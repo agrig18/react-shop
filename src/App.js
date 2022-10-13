@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { ApolloProvider } from "@apollo/client";
+import Wrapper from "components/Wrapper";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { client } from "client";
+import CartProvider from "context/Cart";
+import { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <StyledThemeProvider theme={{ mode: "default" }}>
+          <CartProvider>
+            <Wrapper />
+          </CartProvider>
+        </StyledThemeProvider>
+      </ApolloProvider>
+    );
+  }
 }
 
 export default App;
