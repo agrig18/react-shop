@@ -1,3 +1,4 @@
+import CImage from "components/CImage";
 import { Component } from "react";
 import * as S from "./styled";
 
@@ -11,7 +12,26 @@ class CButton extends Component {
           disabled={this.props.disabled}
           onClick={this.props.onClick}
         >
-          {this.props.name}
+          {this.props.className === "counter" ? (
+            <S.SSign>
+              {this.props.name === "+" && (
+                <CImage
+                  fileName={
+                    this.props.id === "mini-cart" ? "vertical-mini" : "vertical"
+                  }
+                />
+              )}
+              <CImage
+                fileName={
+                  this.props.id === "mini-cart"
+                    ? "horizontal-mini"
+                    : "horizontal"
+                }
+              />
+            </S.SSign>
+          ) : (
+            <div>{this.props.name}</div>
+          )}
         </S.SButton>
       </S.SButtonWrapper>
     );

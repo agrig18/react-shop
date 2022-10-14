@@ -83,3 +83,17 @@ export const SButton = styled.button`
       ThemeColors[props.theme.mode]["s_size_button_text_hover"]};
   }
 `;
+
+export const SSign = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
