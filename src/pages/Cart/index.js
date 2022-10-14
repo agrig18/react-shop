@@ -13,7 +13,7 @@ class CartPage extends Component {
     const { state, checkout } = this.context;
     return state.cartItems.length ? (
       <S.SCartPageWrapper>
-        <S.SCartTitle>CART</S.SCartTitle>
+        <S.SCartTitle>Cart</S.SCartTitle>
         <S.SBorder />
         {state.cartItems.map((item) => (
           <div>

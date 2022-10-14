@@ -18,4 +18,5 @@ export const SCartTitle = styled.h2`
   font-size: 32px;
   font-weight: 700;
   color: ${(props) => ThemeColors[props.theme.mode]["s_cart_title"]};
+  text-transform: uppercase;
 `;
