@@ -14,7 +14,8 @@ class Header extends Component {
       showCurrencies: false,
       showMiniCart: false,
     };
-    this.ref = createRef();
+    this.currencyRef = createRef();
+    this.miniCartRef = createRef();
   }
 
   dropDownCurrencyHandler() {
@@ -40,9 +41,18 @@ class Header extends Component {
       this.state.showMiniCart !== prevState.showMiniCart
     ) {
       const checkIfClickedOutside = (event) => {
-        if (this.ref.current && !this.ref.current.contains(event.target)) {
+        if (
+          this.currencyRef.current &&
+          !this.currencyRef.current.contains(event.target)
+        ) {
           if (this.state.showCurrencies)
             this.setState({ showCurrencies: false });
+        }
+
+        if (
+          this.miniCartRef.current &&
+          !this.miniCartRef.current.contains(event.target)
+        ) {
           if (this.state.showMiniCart) this.setState({ showMiniCart: false });
         }
       };
@@ -63,8 +73,8 @@ class Header extends Component {
           <S.SLogo>
             <CImage fileName={"shop-bag"} />
           </S.SLogo>
-          <S.SIcons ref={this.ref}>
-            <S.SDropDown>
+          <S.SIcons>
+            <S.SDropDown ref={this.currencyRef}>
               <button onClick={this.dropDownCurrencyHandler.bind(this)}>
                 <S.SCurrencyIconWrapper>
                   <S.SCurrencyIcon>{state.curCurrency}</S.SCurrencyIcon>
@@ -85,19 +95,21 @@ class Header extends Component {
                 </S.SDropDownContent>
               )}
             </S.SDropDown>
-            <S.SMiniCartIcon onClick={this.miniCartPopUpHandler.bind(this)}>
-              <CImage fileName="empty-cart" />
-              {state.itemCount > 0 && (
-                <S.SMiniCartItemCounter>
-                  {state.itemCount}
-                </S.SMiniCartItemCounter>
+            <S.SMiniCart ref={this.miniCartRef}>
+              <S.SMiniCartIcon onClick={this.miniCartPopUpHandler.bind(this)}>
+                <CImage fileName="empty-cart" />
+                {state.itemCount > 0 && (
+                  <S.SMiniCartItemCounter>
+                    {state.itemCount}
+                  </S.SMiniCartItemCounter>
+                )}
+              </S.SMiniCartIcon>
+              {this.state.showMiniCart && (
+                <CMiniCart
+                  miniCartPopUpHandler={this.miniCartPopUpHandler.bind(this)}
+                />
               )}
-            </S.SMiniCartIcon>
-            {this.state.showMiniCart && (
-              <CMiniCart
-                miniCartPopUpHandler={this.miniCartPopUpHandler.bind(this)}
-              />
-            )}
+            </S.SMiniCart>
           </S.SIcons>
         </S.SHeaderWrapper>
         {this.state.showMiniCart && <S.SCartOverlay />}

@@ -51,9 +51,12 @@ class CategoriesListPage extends Component {
   }
 
   render() {
+    const categoryName =
+      this.state.categoryName?.charAt(0).toUpperCase() +
+      this.state.categoryName?.slice(1);
     return (
       <S.CategoriesListWrapper>
-        <S.CategoryTitle>{this.state.categoryName}</S.CategoryTitle>
+        <S.CategoryTitle>{categoryName}</S.CategoryTitle>
         <S.ProductsListWrapper>
           {this.state.productsList?.length &&
             this.state.productsList?.map((product) => {

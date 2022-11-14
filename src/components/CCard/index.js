@@ -39,11 +39,10 @@ class CCard extends Component {
           <S.SProductTitle className="title">
             {product.brand} {product.name}
           </S.SProductTitle>
-          <S.SProductPrice>{`${
-            product.prices?.[state.curCurrencyIndex]?.currency.symbol
-          } ${
-            product.prices?.[state.curCurrencyIndex]?.amount
-          }`}</S.SProductPrice>
+          <S.SProductPrice>
+            {product.prices?.[state.curCurrencyIndex]?.currency.symbol}{" "}
+            {product.prices?.[state.curCurrencyIndex]?.amount.toFixed(2)}
+          </S.SProductPrice>
         </Link>
       </S.SCard>
     );

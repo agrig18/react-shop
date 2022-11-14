@@ -6,7 +6,7 @@ export const SMiniCartWrapper = styled.div`
   justify-content: flex-start;
   position: absolute;
   top: 50px;
-  right: 0;
+  right: -70px;
   padding: 32px 16px;
   gap: 32px;
   width: 325px;

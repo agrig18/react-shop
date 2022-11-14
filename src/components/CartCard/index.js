@@ -71,7 +71,9 @@ class CartCard extends Component {
                   fontWeight="700"
                 >
                   {state.curCurrency}
-                  {this.props.product?.prices[state.curCurrencyIndex].amount}
+                  {this.props.product?.prices[
+                    state.curCurrencyIndex
+                  ].amount.toFixed(2)}
                 </S.SText>
               )}
               {this.props.product?.attributes?.map((attribute, index) => (
@@ -108,7 +110,9 @@ class CartCard extends Component {
               {this.props.className === "product-page" && (
                 <S.SText fontSize="24px" fontWeight="700">
                   {state.curCurrency}
-                  {this.props.product?.prices[state.curCurrencyIndex]?.amount}
+                  {this.props.product?.prices[
+                    state.curCurrencyIndex
+                  ]?.amount.toFixed(2)}
                 </S.SText>
               )}
             </S.SCartDetails>

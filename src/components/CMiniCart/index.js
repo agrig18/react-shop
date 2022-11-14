@@ -21,7 +21,7 @@ class CMiniCart extends Component {
             My Bag,{" "}
           </SText>
           <SText fontSize="16px" fontWeight="500">
-            {state.itemCount} items
+            {state.itemCount} {state.itemCount === 1 ? "item" : "items"}
           </SText>
         </S.SMiniCartHeader>
         {state.cartItems.map((item, index) => {

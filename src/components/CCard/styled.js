@@ -50,6 +50,7 @@ export const SCard = styled.div`
   .product_image {
     width: 330px;
     height: 300px;
+    object-fit: contain;
     opacity: ${(props) => (props.inStock ? 1 : 0.5)};
   }
 

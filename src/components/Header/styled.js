@@ -65,12 +65,12 @@ export const SDropDown = styled.div`
   }
 `;
 
-export const SMiniCart = styled.div``;
-
-export const SMiniCartIcon = styled.div`
+export const SMiniCart = styled.div`
   position: relative;
   right: 70px;
-  text-align: center;
+`;
+
+export const SMiniCartIcon = styled.div`
   cursor: pointer;
 
   img {
