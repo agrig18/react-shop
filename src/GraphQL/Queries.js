@@ -15,10 +15,6 @@ export const GET_CATEGORIES = gql`
   query Categories {
     categories {
       name
-      products {
-        __typename @skip(if: true)
-        id
-      }
     }
   }
 `;

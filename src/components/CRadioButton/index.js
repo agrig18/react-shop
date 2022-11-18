@@ -25,6 +25,7 @@ class CRadioButton extends Component {
                           : ""
                       }
                       checked={this.props.selectedAttribute === index}
+                      readOnly
                     />
                   ) : (
                     <S.SRadioButton
