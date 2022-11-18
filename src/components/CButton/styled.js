@@ -11,7 +11,8 @@ export const SButton = styled.button`
 
   &.counter {
     background: white;
-    border: 1px solid #1d1f22;
+    border: 1px solid
+      ${(props) => ThemeColors[props.theme.mode]["s_img_border"]};
     width: ${(props) => (props.id === "mini-cart" ? "24px" : "45px")};
     height: ${(props) => (props.id === "mini-cart" ? "24px" : "45px")};
     color: black;
@@ -62,8 +63,8 @@ export const SButton = styled.button`
     height: 43px;
     font-size: 14px;
     border: 1px solid #1d1f22;
-    background: #ffffff;
-    color: #1d1f22;
+    background: ${(props) =>
+      ThemeColors[props.theme.mode]["s_view_bag_button"]};
     text-transform: uppercase;
     transition-duration: 0.5s;
   }

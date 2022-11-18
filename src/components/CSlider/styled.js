@@ -18,7 +18,7 @@ export const SSlide = styled.div`
   }
 
   img {
-    border: 1px solid #1d1f22;
+    /* border: 1px solid #1d1f22; */
     width: 100%;
     height: 100%;
     object-fit: scale-down;

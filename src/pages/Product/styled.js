@@ -6,7 +6,7 @@ export const SProductPageWrapper = styled.div`
   max-height: 100vw;
 
   .product_main_image {
-    border: 1px solid #1d1f22;
+    /* border: 1px solid #1d1f22; */
     width: 500px;
     height: 500px;
     margin-left: 50px;
@@ -25,7 +25,7 @@ export const SProductGallery = styled.div`
   overflow-y: auto;
 
   img {
-    border: 1px solid #1d1f22;
+    /* border: 1px solid #1d1f22; */
     width: 88px;
     height: 88px;
     cursor: pointer;

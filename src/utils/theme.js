@@ -25,7 +25,7 @@ export const ThemeColors = {
     s_color_button_outline: "ffffff",
     s_mini_cart_background: "#FFFFFF",
     s_mini_cart_backdrop: "#393748",
-    s_view_bag_button: "#1d1f22",
+    s_view_bag_button: "#ffffff",
     s_disabled_button: "#cccccc",
   },
 };
